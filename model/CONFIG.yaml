@@ -1,10 +1,10 @@
-model_organization:    # biodatamodels
-model_name:            # obographs
+model_organization:  biodatamodels  # biodatamodels
+model_name:   obographs         # obographs
 root_schema: obograph  # the name of the base schema file (w/o .yaml)
 model_root_class: Node   # <name of the base class in the schema for testing
 
-model_author:              # Chris Mungall
-model_author_email:        # cjmungall@lbl.gov
+model_author:  Chris Mungall            # Chris Mungall
+model_author_email: cjmungall@lbl.gov       # cjmungall@lbl.gov
 model_synopsis:  Modeling obograph in linkml
 model_description: |-
 

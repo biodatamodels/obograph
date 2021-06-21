@@ -1,3 +1,4 @@
-# Placeholder README
-This file will be replaced in the build process.  The details about how to use this template
-can be found in [ABOUT.md](./ABOUT.md).
+# LinkML Modeling obograph in linkml
+Modeling obograph in linkml
+
+## [Documentation](https://biodatamodels.github.io/obographs/)

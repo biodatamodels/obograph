@@ -1,18 +1,30 @@
 id: https://github.com/geneontology/obographs
 title: Obographs LinkML model
-name: Obographs LinkML model
+name: obographs_linkml_model
 license: https://creativecommons.org/publicdomain/zero/1.0/
 version: 0.0.1
 
 prefixes:
  linkml: https://w3id.org/linkml/
  sdo: https://schema.org/
-
-default_curi_maps:
- - semweb_context
+ skos: 'http://www.w3.org/2004/02/skos/core#'
 
 imports:
- - types
+ - linkml:types
+
+enums:
+  scopes_enum:
+    permissible_values:
+      exact:
+      narrow:
+      broad:
+      related:
+  preds_enum:
+    permissible_values:
+      hasExactSynonym:
+      hasNarrowSynonym:
+      hasBroadSynonym:
+      hasRelatedSynonym:
 
 slots:
   sub:
@@ -75,6 +87,13 @@ slots:
     range: string
   propertyId:
     range: string
+  synonyms:
+    multivalued: true
+    range: Synonym
+  synonymType:
+    range: string
+  scope:
+    range: scopes_enum
 
 classes:
   Graph:
@@ -122,6 +141,10 @@ classes:
     is_a: PropertyValue
   SynonymPropertyValue:
     is_a: PropertyValue
+    slots:
+      - synonymType
+      - isExact
+      - scope
 
   PropertyValue:
     abstract: true
