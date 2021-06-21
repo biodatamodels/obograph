@@ -1,7 +1,7 @@
 # Make artifacts
 target/
 docs/
-agr_curation_schema/
+obographs/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
