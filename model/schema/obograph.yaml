@@ -1,0 +1,160 @@
+id: https://github.com/geneontology/obographs
+title: Obographs LinkML model
+name: Obographs LinkML model
+license: https://creativecommons.org/publicdomain/zero/1.0/
+version: 0.0.1
+
+prefixes:
+ linkml: https://w3id.org/linkml/
+ sdo: https://schema.org/
+
+default_curi_maps:
+ - semweb_context
+
+imports:
+ - types
+
+slots:
+  sub:
+    range: string
+  pred:
+    range: string
+  obj:
+    range: string
+  id:
+    range: string
+  label:
+    range: string
+  type:
+    range: rdf:type
+  meta:
+    range: Meta
+  definition:
+    range: DefinitionPropertyValue
+  basicPropertyValues:
+    range: BasicPropertyValue
+  comments:
+    multivalued: true
+    range: string
+  version:
+    range: string
+  deprecated:
+    range: boolean
+  subsets:
+    multivalued: true
+    range: string
+  xrefs:
+    multivalued: true
+    range: string
+  lbl:
+    range: string
+  nodes:
+    multivalued: true
+    range: Node
+  edges:
+    multivalued: true
+    range: Edge
+  equivalentNodesSets:
+    multivalued: true
+    range: EquivalentNodesSet
+  logicalDefinitionAxioms:
+    multivalued: true
+    range: LogicalDefinitionAxiom
+  domainRangeAxioms:
+    multivalued: true
+    range: DomainRangeAxiom
+  propertyChainAxioms:
+    multivalued: true
+    range: PropertyChainAxioms
+  representitiveNodeId:
+    range: string
+  nodeIds:
+    multivalued: true
+    range: string
+  fillerId:
+    range: string
+  propertyId:
+    range: string
+
+classes:
+  Graph:
+    slots:
+      - id
+      - lbl
+      - meta
+      - nodes
+      - edges
+      - equivalentNodesSets
+      - logicalDefinitionAxioms
+      - domainRangeAxioms
+      - propertyChainAxioms
+
+  Node:
+    slots:
+      - id
+      - label
+      - type
+      - meta
+
+  Edge:
+    slots:
+      - sub
+      - pred
+      - obj
+      - meta
+
+  Meta:
+    slots:
+      - subsets
+      - version
+      - comments
+      - definition
+      - xrefs
+      - synonyms
+      - basicPropertyValues
+      - deprecated
+
+  DefinitionPropertyValue:
+    is_a: PropertyValue
+  BasicPropertyValue:
+    is_a: PropertyValue
+  XrefPropertyValue:
+    is_a: PropertyValue
+  SynonymPropertyValue:
+    is_a: PropertyValue
+
+  PropertyValue:
+    abstract: true
+    slots:
+      - pred
+      - val
+      - xrefs
+      - meta
+
+  Axiom:
+    abstract: true
+    slots:
+      - meta
+
+  DomainRangeAxiom:
+    is_a: Axiom
+
+  EquivalentNodesSet:
+    is_a: Axiom
+    slots:
+      - representativeNodeId
+      - nodeIds
+
+  ExistentialRestrictionExpression:
+    slots:
+      - fillerId
+      - propertyId
+
+  LogicalDefinitionAxiom:
+    is_a: Axiom
+
+  PropertyChainAxiom:
+    is_a: Axiom
+
+
+
