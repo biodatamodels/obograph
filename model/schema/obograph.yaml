@@ -7,7 +7,19 @@ version: 0.0.1
 prefixes:
  linkml: https://w3id.org/linkml/
  sdo: https://schema.org/
- skos: 'http://www.w3.org/2004/02/skos/core#'
+ skos: http://www.w3.org/2004/02/skos/core#
+
+default_curi_maps:
+  - obo_context
+  - idot_context
+  - monarch_context
+  - semweb_context
+
+emit_prefixes:
+  - rdf
+  - rdfs
+  - xsd
+  - skos
 
 imports:
  - linkml:types
@@ -35,10 +47,13 @@ slots:
     range: string
   id:
     range: string
+  val:
+    range: string
   label:
     range: string
   type:
-    range: rdf:type
+    # TODO: rdf:type not working - import problem?
+    range: string
   meta:
     range: Meta
   definition:
@@ -77,7 +92,7 @@ slots:
     range: DomainRangeAxiom
   propertyChainAxioms:
     multivalued: true
-    range: PropertyChainAxioms
+    range: PropertyChainAxiom
   representitiveNodeId:
     range: string
   nodeIds:
@@ -89,11 +104,14 @@ slots:
     range: string
   synonyms:
     multivalued: true
-    range: Synonym
+    range: SynonymPropertyValue
   synonymType:
     range: string
   scope:
     range: scopes_enum
+  isExact:
+    range: boolean
+
 
 classes:
   Graph:
@@ -165,7 +183,7 @@ classes:
   EquivalentNodesSet:
     is_a: Axiom
     slots:
-      - representativeNodeId
+      - representitiveNodeId
       - nodeIds
 
   ExistentialRestrictionExpression:
