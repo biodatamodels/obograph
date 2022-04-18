@@ -46,7 +46,8 @@ slots:
   obj:
     range: string
   id:
-    range: string
+    range: string 
+    required: true
   val:
     range: string
   label:
@@ -56,6 +57,7 @@ slots:
     range: string
   meta:
     range: Meta
+    required: true
   definition:
     range: DefinitionPropertyValue
   basicPropertyValues:
