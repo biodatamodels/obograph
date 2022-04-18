@@ -80,21 +80,27 @@ slots:
   nodes:
     multivalued: true
     range: Node
+    required: true
   edges:
     multivalued: true
     range: Edge
+    required: true
   equivalentNodesSets:
     multivalued: true
     range: EquivalentNodesSet
+    required: true
   logicalDefinitionAxioms:
     multivalued: true
     range: LogicalDefinitionAxiom
+    required: true
   domainRangeAxioms:
     multivalued: true
     range: DomainRangeAxiom
+    required: true
   propertyChainAxioms:
     multivalued: true
     range: PropertyChainAxiom
+    required: true
   representitiveNodeId:
     range: string
   nodeIds:
