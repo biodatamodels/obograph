@@ -46,7 +46,8 @@ slots:
   obj:
     range: string
   id:
-    range: string
+    range: string 
+    required: true
   val:
     range: string
   label:
@@ -56,6 +57,7 @@ slots:
     range: string
   meta:
     range: Meta
+    required: true
   definition:
     range: DefinitionPropertyValue
   basicPropertyValues:
@@ -78,21 +80,27 @@ slots:
   nodes:
     multivalued: true
     range: Node
+    required: true
   edges:
     multivalued: true
     range: Edge
+    required: true
   equivalentNodesSets:
     multivalued: true
     range: EquivalentNodesSet
+    required: true
   logicalDefinitionAxioms:
     multivalued: true
     range: LogicalDefinitionAxiom
+    required: true
   domainRangeAxioms:
     multivalued: true
     range: DomainRangeAxiom
+    required: true
   propertyChainAxioms:
     multivalued: true
     range: PropertyChainAxiom
+    required: true
   representitiveNodeId:
     range: string
   nodeIds:

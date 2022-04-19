@@ -42,6 +42,7 @@ class InputFileTestCase(unittest.TestCase):
                     else:
                         nunk += 1
                 except Exception as _:
+                    print(_)
                     nfailures += 1
 
         print(f"{nread} files tested")
